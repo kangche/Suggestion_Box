@@ -34,13 +34,21 @@ worker_class = 'sync'
 #运行方法
 ##本地运行
 建议python版本3.10及以上。
-```pip3 install -r requirements.txt ```
-```gunicorn -c configure/gunicorn.conf.py run:app```
+```
+pip3 install -r requirements.txt
+```
+```
+gunicorn -c configure/gunicorn.conf.py run:app
+```
 浏览器访问82端口验证是否正常运行。如http://you.server.ip:82
 ##docker运行
 首先先在linux机器上安装好docker。
-```docker build -t webapp:v1 .```
-```docker run -d -p 88:82 webapp:v1```
+```
+docker build -t webapp:v1 .
+```
+```
+docker run -d -p 88:82 webapp:v1
+```
 浏览器访问88端口验证是否正常运行。如http://you.server.ip:88
 
 
