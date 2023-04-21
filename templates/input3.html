@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+意见箱
+{% endblock title %}
+{% block js_script %}
+
+
+{% endblock js_script %}
+
+{% block header_main %}
+<h1>意见箱</h1> 
+{% endblock header_main %}
+
+
+{% block main_message %}
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+      {% for category, message in messages %}
+        {% if category == 'error' %}
+          <p class="error">{{ message }}</p>
+          {% elif category == 'info' %}
+          <p class="info">{{ message }}</p>
+          {% elif category == 'warning' %}
+          <p class="warning">{{ message }}</p>
+          {% else %} 
+          <p class="">{{ message }}</p>
+        {% endif %}
+      {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+{% endblock main_message %}
+
+{% block footer_message %}
+
+<p>Zillion</p>
+            
+{% endblock footer_message %}
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en-US" dir="ltr">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block js_script %}
+
+        
+    {% endblock js_script  %}
+    <title>
+    
+        {% block title %}
+    
+    
+        {% endblock title %}
+    </title>
+    <link href="/static/css/screen.css" media="screen" rel="stylesheet">
+</head>
+<body>
+    <header class="page">
+        {% block header_page  %}
+            
+        {% endblock header_page  %}
+    </header>
+    <nav>
+        {% block nav_ul %}
+        <!-- <ul>
+            <li><a href="http://127.0.0.1:5000/test1">意见箱</a></li>
+            <li><a href="http://127.0.0.1:5000/test">改密码</a></li>
+        </ul>
+       -->
+        {% endblock nav_ul %}
+    </nav>
+    <header class="main">
+        {% block header_main %}
+            
+        {% endblock header_main %}
+    </header>
+    <main>
+
+    {% block main_message %}
+ 
+   
+        
+    {% endblock main_message %}
+    </main>
+    <footer>
+    <footer>
+        {% block footer_message %}
+            
+        {% endblock footer_message %}
+    </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}
+意见箱
+{% endblock title %}
+{% block js_script %}
+<script src="/static/js/jquery-3.6.4.min.js"></script>
+<script>
+  
+    $(document).ready(function() {
+
+      $("#name").val("匿名");
+        $("#option1").change(function() {
+          if ($("#option1").is(":checked")) {
+            $("#div2").hide();
+            $("#name").val("匿名");
+          } else {
+            $("#div2").show();
+            $("#name").val("");
+          }
+        });
+        $("#option2").change(function() {
+          
+          if ($("#option2").is(":checked")) {
+            $("#div2").show();
+            $("#name").val("");
+          } else {
+            $("#div2").hide();
+            $("#name").val("匿名");
+          }
+        });
+      });
+
+</script>
+
+{% endblock js_script %}
+
+{% block header_main %}
+<h1>意见箱</h1> 
+{% endblock header_main %}
+
+
+{% block main_message %}
+
+
+
+
+<form class="inputfrm" method="POST" action="/" autocomplete="off">
+  <div  id="div1" >
+  
+    <label for="option1">匿名：</label>
+    <input type="radio" name="options" id="option1" checked>
+    <label for="option2">实名：</label>
+    <input type="radio" name="options" id="option2">
+   <div id="div2" style = "display: none;" >{{form.name.label}} {{form.name()}}</div>
+  </div>
+    
+    {{ form.hidden_tag() }}
+    {{ckeditor.load()}}
+    {{ ckeditor.load(pkg_type="basic") }}
+    {{form.body}}
+    {{ckeditor.config(name='body') }}
+    {{form.submit()}}
+  
+</form>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+      {% for category, message in messages %}
+        {% if category == 'error' %}
+          <p class="error">{{ message }}</p>
+          {% elif category == 'info' %}
+          <p class="info">{{ message }}</p>
+          {% elif category == 'warning' %}
+          <p class="warning">{{ message }}</p>
+          {% else %} 
+          <p class="">{{ message }}</p>
+        {% endif %}
+      {% endfor %}
+  {% endif %}
+{% endwith %}
+{% endblock main_message %}
+
+{% block footer_message %}
+
+<p>Zillion</p>
+            
+{% endblock footer_message %}
+</body>
+</html>

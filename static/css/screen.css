@@ -1,0 +1,669 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    background-color: #ededed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    line-height: 1.4;
+    color: #505050;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto auto auto 1fr auto;
+  }
+  div#div1{
+    margin-bottom: 30px;
+    font-weight: bold;
+    display: inline-block;
+    
+  }
+  div#div1 label{
+   margin-left: 50px;
+  }
+  
+  div#div2 {
+   margin-right: 50px;
+   color: #c59c9c;
+   display: inline-block;
+   width: auto;
+   vertical-align: top;
+  }
+  div#div2 #name {
+    background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* padding: 10px; */
+   }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #000;
+    margin: 1em 0;
+    line-height: 1.25;
+  }
+  
+  details {
+    margin: 0.5em 0;
+  }
+  
+  details summary {
+    margin: 1.5em 0;
+    list-style: none;
+    background-image: url("../img/icon-Chevron-closed.png");
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 18px auto;
+    padding-left: 1.5em;
+  }
+  
+  /* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  details[open] summary {
+    background-image: url("../img/icon-Chevron-open.png");
+    background-repeat: no-repeat;
+  }
+  
+  a,
+  summary {
+    color: #216aed;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  
+  pre,
+  code {
+    font-size: inherit;
+  }
+  
+  button,
+  summary {
+    cursor: pointer;
+  }
+  
+  header.page {
+    text-align: end;
+    padding: 0 1em;
+    background-color: #222;
+    font-size: 90%;
+  }
+  
+  header.page ul.languageSwitcher {
+    font-size: 85%;
+    margin: 0 0.5em;
+    display: inline-block;
+  }
+  
+  header.page ul.languageSwitcher li {
+    display: inline-block;
+  }
+  
+  header.page ul.languageSwitcher button,
+  header.page form.logout button {
+    border: 0;
+    color: #fff;
+    background-color: #222;
+    padding: 0.5em 0.5em;
+  }
+  
+  header.page ul.languageSwitcher button:hover,
+  header.page form.logout button:hover {
+    background-color: #4e4e4e;
+    border-radius: 2em;
+    text-decoration: underline;
+  }
+  
+  header.page form.logout {
+    font-size: 85%;
+    display: inline-block;
+    margin: 0 0.5em;
+  }
+  
+  header.page form.logout button {
+    margin: 0.25em;
+    font-weight: bold;
+  }
+  
+  nav {
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  nav ul {
+    margin: 1em auto;
+    display: block;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    padding: 0;
+    margin: 1.5em 0;
+  }
+  
+  nav ul li a {
+    padding: 1em 1.5em;
+    color: #216aed;
+    font-weight: bold;
+  }
+  
+  nav ul li.active a {
+    color: #216aed;
+    font-weight: bold;
+    border-bottom: 5px solid #216aed;
+  }
+  
+  nav ul li a:hover {
+    background-color: #ededed;
+    border-radius: 2em;
+  }
+  
+  nav ul li.active a:hover {
+    border-radius: 0;
+    background-color: #fff;
+  }
+  
+  footer {
+    font-size: 85%;
+    background-color: #222;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  footer p {
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+    color: #fff;
+  }
+  
+  form.frm label {
+    font-weight: bold;
+    display: block;
+    margin: 0.5em 0 0.3em 0;
+  }
+  
+  form.frm {
+    width: 100%;
+  }
+  
+  form.frm button {
+    border: 0;
+    border-radius: 2em;
+    color: #fff;
+    background-color: #216aed;
+    padding: 0.5em 1.5em;
+    font-weight: bold;
+    font-size: inherit;
+  }
+  
+  form.frm button.warning {
+    background-color: #ff9900;
+  }
+  
+  form.frm button.success {
+    background-color: #16a566;
+  }
+  
+  form.frm button.error {
+    background-color: #ed3415;
+  }
+  
+  form.frm select,
+  form.frm input[type="text"],
+  form.frm input[type="password"],
+  form.frm textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    display: block;
+  }
+  
+  form.frm select {
+    -webkit-appearance: none;
+  }
+
+   #gender{
+    font-weight: bold;
+    display: inline-block;
+    margin: 0.5em 0 0.3em 0;
+  }
+
+  form.inputfrm label{
+    font-weight: bold;
+    display: inline-block;
+    margin: 0.5em 0 0.3em 0;
+  }
+  form.inputfrm input[type="radio"]{
+    width: 10px;
+  }
+
+  form.inputfrm input[type="submit"]{
+    border: 0;
+    border-radius: 2em;
+    color: #fff;
+    background-color: #216aed;
+    padding: 0.5em 1.5em;
+    font-weight: bold;
+    font-size: inherit;
+    margin-top: 0.5em;
+    width:auto;
+  }
+  form.inputfrm input[type="reset"]{
+    /* width: 50px;
+    margin-top: 0.5em;
+    border-radius: 10fr; */
+    margin-top: 0.5em;
+    border: 0;
+    border-radius: 2em;
+    color: #fff;
+    background-color: #216aed;
+    padding: 0.5em 1.5em;
+    font-weight: bold;
+    font-size: inherit;
+    width:auto;
+  
+  }
+  form.inputfrm input{
+    width: 300px;
+  }
+
+
+
+  fieldset {
+    border: 0;
+    margin: 1em 0;
+    padding: 0;
+  }
+  
+  table.tbl {
+    width: 100%;
+    border: 1px solid #ededed;
+    border-radius: 0.5em;
+    margin: 1em 0;
+    padding: 0.5em;
+  }
+  
+  ul li,
+  ol li {
+    margin: 0.25em;
+  }
+  
+  table.tbl th {
+    text-align: start;
+    vertical-align: top;
+  }
+  
+  table.tbl td.text-right {
+    text-align: end;
+  }
+  
+  table.tbl td,
+  table.tbl th {
+    padding: 0.75em;
+  }
+  
+  table.tbl ul {
+    padding: 0 0 0 1em;
+    margin: 0;
+  }
+  
+  table.tbl dl,
+  table.tbl dt {
+    margin: 0;
+    padding: 0;
+  }
+  
+  table.tbl dd {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  table.tbl form.frm {
+    margin: 0;
+  }
+  
+  table.tbl form.frm button {
+    margin: 0;
+  }
+  table.table1 {
+    margin: 30px auto 30px auto;
+    border-collapse: collapse;
+ 
+  }
+  table.table1 th {
+    background-color: #64b880;
+    color: #ededed;
+  }
+  table.table1 th, td {
+    border: 1px dotted black;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  main {
+    width: 100%;
+    max-width: 60rem;
+    background-color: #fff;
+    padding: 0.5em 1em;
+  }
+  
+  header.main h1 {
+    background-color: #888;
+    color: #fff;
+    text-align: center;
+    padding: 0.75em;
+    margin: 0;
+  }
+  
+  p.warning,
+  p.info,
+  p.error,
+  p.plain {
+    padding: 1.5em;
+    border-radius: 0.5em;
+  }
+  
+  p.plain {
+    color: #fffffc;
+    background-color: #64b880;
+  }
+  
+  span.plain,
+  span.success,
+  span.error,
+  span.warning {
+    padding: 0.5em;
+    margin: 0.25em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    font-size: 90%;
+    display: inline-block;
+  }
+  
+  span.plain {
+    color: #505050;
+    background-color: #ededed;
+  }
+  
+  span.success {
+    color: #fff;
+    background-color: #16a566;
+  }
+  
+  span.error {
+    color: #fff;
+    background-color: #ed3415;
+  }
+  
+  span.warning {
+    color: #fff;
+    background-color: #ff9900;
+  }
+  
+  p.warning {
+    color: #fff;
+    background-color: #ff9900;
+  }
+  
+  p.error {
+    color: #fff;
+    background-color: #ed3415;
+  }
+  p.info {
+    color: #fff;
+    background-color:#16a566;
+  }
+  
+  main div.auth {
+    margin: 0 auto;
+    max-width: 20em;
+  }
+  
+  main div.appAuth {
+    margin: 0 auto;
+    max-width: 30em;
+  }
+  
+  dl dt {
+    margin: 0.5em 0;
+    display: block;
+    font-weight: bold;
+  }
+  
+  figcaption {
+    font-size: 85%;
+    text-align: center;
+    font-style: italic;
+    padding: 1em;
+  }
+  
+  svg.appUsage {
+    display: block;
+    margin: 0 auto;
+    max-width: 40%;
+  }
+  
+  ul.toc {
+    padding: 0 1em;
+    list-style: none;
+  }
+  
+  ul.appUsage {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.appUsage li {
+    display: inline-block;
+    margin: 0;
+  }
+  
+  .pieLegend {
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5em;
+    margin: 0.5em;
+    display: inline-block;
+    border-radius: 1em;
+  }
+  
+  /* @see https://learnui.design/tools/data-color-picker.html#palette */
+  .pieColor1 {
+    fill: #003f5c;
+    background-color: #003f5c;
+  }
+  
+  .pieColor2 {
+    fill: #2f4b7c;
+    background-color: #2f4b7c;
+  }
+  
+  .pieColor3 {
+    fill: #665191;
+    background-color: #665191;
+  }
+  
+  .pieColor4 {
+    fill: #a05195;
+    background-color: #a05195;
+  }
+  
+  .pieColor5 {
+    fill: #d45087;
+    background-color: #d45087;
+  }
+  
+  .pieColor6 {
+    fill: #f95d6a;
+    background-color: #f95d6a;
+  }
+  
+  .pieColor7 {
+    fill: #ff7c43;
+    background-color: #ff7c43;
+  }
+  
+  .pieColor8 {
+    fill: #ffa600;
+    background-color: #ffa600;
+  }
+  
+  blockquote {
+    margin: 0;
+    padding: 1em;
+    background-color: #ededed;
+    border-left: 0.2em solid #888;
+    border-radius: 0 0.5em 0.5em 0;
+  }
+  
+  blockquote:lang(ar-MA) {
+    margin-right: 0;
+    border-left: 0;
+    border-right: 0.2em solid #888;
+    border-radius: 0.5em 0 0 0.5em;
+  }
+  
+  div.appApproval {
+    background-color: #ededed;
+    display: flex;
+    align-items: center;
+    padding: 1em 0;
+    justify-content: space-evenly;
+    border-radius: 0.5em;
+    flex-wrap: wrap;
+    margin: 1em 0;
+  }
+  
+  div.appApproval span {
+    font-size: 1.25rem;
+    color: #000;
+    display: inline-block;
+    background-image: url("../img/icon-Unknown.png");
+    background-repeat: no-repeat;
+    background-size: 64px 64px;
+    background-position: 50% 1em;
+    min-height: 64px;
+    text-align: center;
+    padding: calc(64px + 1.5em) 0.5em 1em 0.5em;
+    font-weight: bold;
+  }
+  
+  div.appApproval span[class^="org.letsconnect-vpn.app"] {
+    background-image: url("../img/icon-LC.png");
+  }
+  
+  div.appApproval span[class^="org.eduvpn.app"] {
+    background-image: url("../img/icon-eduVPN.png");
+  }
+  
+  div.appApproval form.frm {
+    display: inline-block;
+    width: initial;
+    padding: 0.5em;
+  }
+  
+  p.lead {
+    text-align: center;
+    padding: 0em;
+    font-size: 1.75rem;
+    color: #888;
+    font-style: italic;
+  }
+  
+  table.stats {
+    border-collapse: separate;
+    border-spacing: 3px 0;
+    width: 85%;
+  }
+  
+  table.stats td,
+  table.stats th {
+    width: 1em;
+    text-align: center;
+    line-height: 0.5;
+  }
+  
+  table.stats tbody th span,
+  table.stats tfoot th span {
+    writing-mode: vertical-rl;
+    font-weight: normal;
+    white-space: nowrap;
+    line-height: 1em;
+    padding-top: 0.5em;
+    font-size: 85%;
+  }
+  
+  table.stats tbody th span {
+    writing-mode: vertical-rl;
+  }
+  
+  table.stats tbody td:not(:empty) {
+    background-color: #9a2e00;
+    color: transparent;
+  }
+  
+  table.stats th.index {
+    box-sizing: content-box;
+    vertical-align: top;
+    padding: 0 0.5em;
+    border-top: 1px solid #888;
+  }
+  
+  table.stats th.index span {
+    font-weight: bold;
+  }
+  
+  @media screen and (min-width: 800px) {
+    main {
+      margin: -3em auto 0 auto;
+      padding: 1.5em 5em;
+      border-radius: 1em 1em 0 0;
+    }
+    header.main h1 {
+      padding: 0.75em 0 2em 0;
+    }
+  }  

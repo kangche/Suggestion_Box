@@ -1,0 +1,4 @@
+flask == 2.2.3
+flask-wtf == 1.1.1
+flask_ckeditor == 0.4.6
+gunicorn == 20.1.0
