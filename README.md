@@ -1,5 +1,5 @@
 # Suggestion_Box
-适用于公司内部的意见箱系统，可以搜集员工的意见发送到指定的邮箱里
+适用于公司内部的意见箱系统，使用bs架构，可以搜集员工的意见发送到指定的邮箱里
 # 应用截图![5defd2c2636c8c7d9dc0c0de7c21fca](https://user-images.githubusercontent.com/38106160/233533556-10cac6e1-6332-47d4-a244-c3d2909adcec.png)
 ![7b5cafaacb68548383f33cbf39ddf99](https://user-images.githubusercontent.com/38106160/233533716-46d0e872-9b37-4800-902d-533d338e8ea7.png)
 ![1a916335c56b6e9a973bd7afe431f74](https://user-images.githubusercontent.com/38106160/233533720-4313803f-a738-45d4-b447-aaca0895cb0a.png)
