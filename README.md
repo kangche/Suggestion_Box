@@ -37,7 +37,7 @@ bind = '0.0.0.0:82'  #应用监听地址和端口
 workers = '16'
 threads = '2'
 worker_class = 'sync'```
-
+```
 
 # 运行方法
 ## 本地运行
