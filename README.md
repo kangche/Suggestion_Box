@@ -31,6 +31,7 @@ workers = '16'
 threads = '2'
 worker_class = 'sync'
 ```
+
 # 运行方法
 ## 本地运行
 建议python版本3.10及以上。
