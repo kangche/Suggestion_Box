@@ -25,7 +25,7 @@ root_path = '/root/Suggestion_Box #docker部署默认即可，如单机运行则
 ## Suggestion_Box/configure/gunicorn.conf.py
 
 gunicorn配置参数
-```
+
 bind = '0.0.0.0:82'  #应用监听地址和端口
 workers = '16'
 threads = '2'
