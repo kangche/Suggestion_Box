@@ -26,17 +26,18 @@ subject = 意见反馈 # 邮件标题
 to = example1@mail.con,example1@mail.con  #意见发到的邮箱可写多个用，隔开
 [global]
 
-root_path = '/root/Suggestion_Box #docker部署默认即可，如单机运行则需要改为实际路径'```
+root_path = '/root/Suggestion_Box #docker部署默认即可，如单机运行则需要改为实际路径'
+```
 
 ## Suggestion_Box/configure/gunicorn.conf.py
-
+```
 gunicorn配置参数
 
 bind = '0.0.0.0:82'  #应用监听地址和端口
 workers = '16'
 threads = '2'
-worker_class = 'sync'
-```
+worker_class = 'sync'```
+
 
 # 运行方法
 ## 本地运行
