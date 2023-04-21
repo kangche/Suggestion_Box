@@ -4,7 +4,8 @@
 # 配置文件
 ## Suggestion_Box/configure/setting.ini
 
-```[flask11]
+```
+[flask11]
 apikey = nibawobizuoge   #api key请妥善保管
 ckeditor_pkg = full      #ckeditor编辑器样式
 ckeditor_height = 400    #ckeditor编辑器的高度
@@ -43,7 +44,7 @@ gunicorn -c configure/gunicorn.conf.py run:app
 ```
 浏览器访问82端口验证是否正常运行。如http://you.server.ip:82
 ## docker运行
-首先先在linux机器上安装好docker。
+首先在linux机器上安装好docker。
 ```
 docker build -t webapp:v1 .
 ```
@@ -51,8 +52,3 @@ docker build -t webapp:v1 .
 docker run -d -p 88:82 webapp:v1
 ```
 浏览器访问88端口验证是否正常运行。如http://you.server.ip:88
-
-
-
-
-
