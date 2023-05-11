@@ -1,6 +1,9 @@
-from flask import Blueprint, render_template, request, url_for, flash, redirect, abort
+from flask import Blueprint, render_template, request, url_for, flash, redirect, abort, current_app
 from models.model_wtf import Myform
 from models.model_sendmail import send_mail
+from models.model_logger import custom_logger
+
+
 noauth = Blueprint('noauth', __name__)
 
 
@@ -21,9 +24,11 @@ def test1():
         try:
             send_mail('<h1>意见来自: {name}</h1><br><br>'.format(name=name)+message)
             flash('意见提交成功', 'info')
+            custom_logger.info(f"客户端IP：{request.remote_addr}内容：{str(message)}结果：'success'")
             return redirect(url_for('noauth.result'))
         except Exception  as e:
-            flash('意见提交失败，请联系IT。', 'error')
+            flash('意见提交失败请联系IT', 'error')
+            custom_logger.error(f"客户端IP：{request.remote_addr} 内容：{str(message)} 结果：'fail'")
             return render_template('input2.html',form = form)
     return render_template('input2.html', form = form)
 
